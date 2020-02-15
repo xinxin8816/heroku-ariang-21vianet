@@ -1,7 +1,7 @@
 {
-	"name": "Heroku aria2c",
+	"name": "Heroku Aria2c 21vianet. Heroku Aria2c 世纪互联版",
 	"description": "Run aria2c on heroku",
-	"repository": "https://github.com/maple3142/heroku-aria2c",
+	"repository": "https://github.com/xinxin8816/heroku-aria2c-21vianet",
 	"keywords": ["aria2c"],
 	"env": {
 		"HEROKU_APP_NAME": {
@@ -10,25 +10,21 @@
 		},
 		"ARIA2C_SECRET": {
 			"description": "Aria2c's secret",
-			"value": "xinxin8816"
+			"value": ""
 		},
 		"RCLONE_CONFIG": {
 			"description": "Rclone config to mount in one line, replace line breaks with \"\\n\"",
 			"required": false
 		},
-		"RCLONE_CONFIG2": {
-			"description": "Rclone config2 to mount in one line, replace line breaks with \"\\n\"",
-			"required": false
-		},
 		"RCLONE_DESTINATION": {
-			"description": "",
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
 			"required": false,
-			"value": "tmp"
+			"value": "google:tmp"
 		},
-		"RCLONE_DESTINATION2": {
-			"description": "",
+		"RCLONE_DESTINATION_2": {
+			"description": "If you mount a second cloud drive, then fill in \"[drivename B]:[remove path B]\"",
 			"required": false,
-			"value": "LoveAction"
+			"value": "one:LoveAction"
 		}
 	},
 	"buildpacks": [
