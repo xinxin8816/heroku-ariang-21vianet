@@ -1,7 +1,9 @@
 # Heroku-Aria2c-21vianet. Heroku-Aria2c 世纪互联版
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-This Repositories forked from maple3142/heroku-aria2c. 这个项目是 maple3142/heroku-aria2c 的不可合并分支。
+This Repositories forked from maple3142/heroku-aria2c.
+
+这个项目是 maple3142/heroku-aria2c 的不可合并分支。
  
 ## Improvement 改进
 
