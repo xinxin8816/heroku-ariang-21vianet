@@ -5,7 +5,8 @@
 ## Improvement 改进
 1. Compatible with China Onedrive by 21vianet. 兼容由世纪互联运营的中国大陆版 Onedrive。
 2. Support mount multiple cloud drive. 支持多网盘挂载。
-3. rclone webui. rclone web 管理界面。
+3. improve performance of the built-in Aria2 and Rclone. 大幅提升内置 Aria2 和 Rclone 性能。
+5. rclone webui. rclone web 管理界面。
 
 ## Mount Cloud Drive With Rclone 挂载网盘
 

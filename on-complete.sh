@@ -7,11 +7,11 @@ topPath=./downloads/${relativePath%%/*} # It will be the path of folder when it 
 echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
 
 if [[ $2 -eq 1 ]]; then # single file
-	rclone -v --config="rclone.conf" --no-traverse copy "$3" "DRIVE:$RCLONE_DESTINATION" 2>&1
-	rclone -v --config="rclone2.conf" --delete-empty-src-dirs --no-traverse move "$3" "DRIVE:$RCLONE_DESTINATION2" 2>&1	
+	rclone -v --config="rclone.conf" --no-traverse copy "$3" "google:$RCLONE_DESTINATION" 2>&1
+	rclone -v --config="rclone.conf" --delete-empty-src-dirs --no-traverse move "$3" "one:$RCLONE_DESTINATION2" 2>&1	
 elif [[ $2 -gt 1 ]]; then # multiple file
-	rclone -v --config="rclone.conf" --no-traverse copy "$topPath" "DRIVE:$RCLONE_DESTINATION/${relativePath%%/*}"
-	rclone -v --config="rclone2.conf" --delete-empty-src-dirs --no-traverse move "$topPath" "DRIVE:$RCLONE_DESTINATION2/${relativePath%%/*}"
+	rclone -v --config="rclone.conf" --no-traverse copy "$topPath" "google:$RCLONE_DESTINATION/${relativePath%%/*}"
+	rclone -v --config="rclone.conf" --delete-empty-src-dirs --no-traverse move "$topPath" "one:$RCLONE_DESTINATION2/${relativePath%%/*}"
 fi
 
 
