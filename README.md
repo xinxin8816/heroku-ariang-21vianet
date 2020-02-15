@@ -12,8 +12,10 @@ This Repositories forked from maple3142/heroku-aria2c. 这个项目是 maple3142
 
 ## Mount Cloud Drive With Rclone 挂载网盘
 
-1. Setup Rclone by following offical instructions: https://rclone.org/docs/
+1. Setup Rclone by following offical instructions: https://rclone.org/docs/.
+
 Chinese users setup by following Rclone with 21vianet peach.
+
 2. Find your `rclone.conf` file, it should look like this:
 
 ```conf
@@ -22,6 +24,7 @@ type = WHATEVER
 client_id = WHATEVER
 client_secret = WHATEVER
 scope = WHATEVER
+china_version = WHATEVER
 token = WHATEVER
 
 [DRIVENAME B]
@@ -29,6 +32,7 @@ type = WHATEVER
 client_id = WHATEVER
 client_secret = WHATEVER
 scope = WHATEVER
+china_version = WHATEVER
 token = WHATEVER
 
 others entries...
