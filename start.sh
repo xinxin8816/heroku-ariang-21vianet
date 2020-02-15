@@ -8,5 +8,5 @@ if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
 fi
 
 echo "rpc-secret=$ARIA2C_SECRET" >> aria2c.conf
-aria2c --conf-path=aria2c.conf&
+aria2c --console-log-level=warn --conf-path=aria2c.conf&
 yarn start
