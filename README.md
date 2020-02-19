@@ -4,7 +4,13 @@
 This repository forked from maple3142/heroku-aria2c.
 
 这个项目是 maple3142/heroku-aria2c 的不可合并分支。
- 
+
+## Abuse Warning 滥用警告
+
+**This project uses a lot of resources. 这个项目使用大量资源。**
+
+**Your Heroku account may be suspend. 可能会导致封号。**
+
 ## Improvement 改进
 
 1. Compatible with China Onedrive by 21vianet. 兼容由世纪互联运营的中国大陆版 OneDrive。
