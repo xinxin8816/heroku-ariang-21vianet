@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 <input id="secret" type="text">
 <button id="panel">Go to panel</button>
 <button id="downloads">View downloaded files</button><br>
-Partcal Copyright © <a href="https://qxin.info">xinxin8816</a>.
+Partial Copyright © <a href="https://qxin.info">xinxin8816</a>.
 <script>
 panel.onclick=function(){
 	open('/ariang/#!/settings/rpc/set/wss/'+location.hostname+'/443/jsonrpc/'+btoa(secret.value),'_blank')
@@ -93,7 +93,7 @@ if (process.env.HEROKU_APP_NAME) {
 				}
 			}
 		)
-		setTimeout(preventIdling, 15 * 60 * 1000) // 15 min
+		setTimeout(preventIdling, 5 * 60 * 1000) // 5 min
 	}
 	preventIdling()
 }
