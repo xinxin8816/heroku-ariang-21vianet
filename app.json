@@ -24,7 +24,7 @@
 		"RCLONE_DESTINATION_2": {
 			"description": "If you mount a second cloud drive, then fill in \"[drivename B]:[remove path B]\"",
 			"required": false,
-			"value": "one:LoveAction"
+			"value": "21:tmp"
 		}
 	},
 	"buildpacks": [
