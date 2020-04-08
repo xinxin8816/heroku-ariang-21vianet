@@ -1,4 +1,4 @@
-# Heroku-Aria2c-21vianet. Heroku-Aria2c 世纪互联版
+# Heroku-AriaNG-21vianet. Heroku-AriaNG 世纪互联版
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 Using Rclone with 21vianet mod and Aria2, even RAR by command terminal flexibly? Try this [Heroku Rclone 21vianet](https://github.com/xinxin8816/heroku-rclone-21vianet)<br>
