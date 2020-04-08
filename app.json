@@ -1,6 +1,6 @@
 {
-	"name": "Heroku Aria2c 21vianet. Heroku Aria2c 世纪互联版",
-	"description": "Run aria2c on heroku",
+	"name": "Heroku AriaNG 21vianet. Heroku AriaNG 世纪互联版",
+	"description": "Run ariaNG on heroku",
 	"repository": "https://github.com/xinxin8816/heroku-aria2c-21vianet",
 	"keywords": ["aria2c"],
 	"env": {
