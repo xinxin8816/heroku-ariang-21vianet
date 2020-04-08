@@ -1,8 +1,11 @@
 # Heroku-AriaNG-21vianet. Heroku-AriaNG 世纪互联版
+One-click to build AriaNG on Heroku, and upload to cloud drive when the file download completed.<br>
+在 Heroku 上一键搭建 AriaNG ，并在下载完成后上传文件至网盘。
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Using Rclone with 21vianet mod and Aria2, even RAR by command terminal flexibly? Try this [Heroku Rclone 21vianet](https://github.com/xinxin8816/heroku-rclone-21vianet)<br>
-想通过更灵活的命令行使用 Aria2、Rclone 甚至是RAR在线解压？试试这个 [Heroku Rclone 世纪互联版](https://github.com/xinxin8816/heroku-rclone-21vianet)
+Using Rclone with 21vianet mod and Aria2, even UNRAR online by command terminal flexibly? Try this [Heroku Rclone 21vianet](https://github.com/xinxin8816/heroku-rclone-21vianet)<br>
+想通过更灵活的命令行使用 Aria2、Rclone，甚至是 RAR 在线解压？试试这个 [Heroku Rclone 世纪互联版](https://github.com/xinxin8816/heroku-rclone-21vianet)
 
 This repository forked from maple3142/heroku-aria2c.<br>
 这个项目是 maple3142/heroku-aria2c 的不可合并分支。
