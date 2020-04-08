@@ -24,7 +24,12 @@ This repository forked from maple3142/heroku-aria2c.<br>
 
 ## Mount Cloud Drive With Rclone 挂载网盘
 
-1. Setup Rclone by following offical instructions: https://rclone.org/docs/. Chinese users setup with 21vianet peach.
+1. Setup Rclone by following offical instructions: https://rclone.org/docs/. Chinese users setup with 21vianet peach. You can find your config from there.
+
+```
+Windows: %userprofile%\.config\rclone\rclone.conf
+Linux: $HOME/.config/rclone/rclone.conf
+```
 
 2. Find your `rclone.conf` file, it should look like this:
 
