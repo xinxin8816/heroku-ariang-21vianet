@@ -1,8 +1,8 @@
 {
 	"name": "Heroku AriaNG 21vianet. Heroku AriaNG 世纪互联版",
 	"description": "Run ariaNG on heroku",
-	"repository": "https://github.com/xinxin8816/heroku-aria2c-21vianet",
-	"keywords": ["aria2c"],
+	"repository": "https://github.com/xinxin8816/heroku-ariang-21vianet",
+	"keywords": ["AriaNG"],
 	"env": {
 		"HEROKU_APP_NAME": {
 			"description": "This should be the same as \"App name\" above.",
@@ -19,7 +19,7 @@
 		"RCLONE_DESTINATION": {
 			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
 			"required": false,
-			"value": "google:tmp"
+			"value": "newgoogle:tmp"
 		},
 		"RCLONE_DESTINATION_2": {
 			"description": "If you mount a second cloud drive, then fill in \"[drivename B]:[remove path B]\"",
