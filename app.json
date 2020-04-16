@@ -6,7 +6,7 @@
 	"env": {
 		"HEROKU_APP_NAME": {
 			"description": "This should be the same as \"App name\" above.",
-			"value": "xinxin8816"
+			"value": ""
 		},
 		"ARIA2C_SECRET": {
 			"description": "Aria2c's secret",
@@ -19,12 +19,12 @@
 		"RCLONE_DESTINATION": {
 			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
 			"required": false,
-			"value": "newgoogle:tmp"
+			"value": "Google:tmp"
 		},
 		"RCLONE_DESTINATION_2": {
 			"description": "If you mount a second cloud drive, then fill in \"[drivename B]:[remove path B]\"",
 			"required": false,
-			"value": "21:tmp"
+			"value": "OneDrive:tmp"
 		}
 	},
 	"buildpacks": [
