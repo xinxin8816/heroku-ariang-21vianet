@@ -11,12 +11,6 @@
 
 ## 基础设置 ##
 
-# Rclone 配置时填写的网盘名(name)
-DRIVE_NAME='7am'
-
-# 网盘目录。即上传目标路径，留空为网盘根目录，末尾不要有斜杠。
-DRIVE_PATH=''
-
 # Aria2下载目录
 # Aria2 一键安装管理脚本使用选项统一进行修改。
 # Aria2 Pro Docker 镜像无需修改，通过目录映射进行设置。
@@ -160,18 +154,18 @@ fi
 
 if [ "${TOP_PATH}" = "${FILE_PATH}" ] && [ $2 -eq 1 ]; then # 普通单文件下载，移动文件到设定的网盘文件夹。
     UPLOAD_PATH="${FILE_PATH}"
-    REMOTE_PATH="${DRIVE_NAME}:${DRIVE_PATH}"
+    REMOTE_PATH="$RCLONE_DESTINATION"
     UPLOAD
     exit 0
 elif [ "${TOP_PATH}" != "${FILE_PATH}" ] && [ $2 -gt 1 ]; then # BT下载（文件夹内文件数大于1），移动整个文件夹到设定的网盘文件夹。
     UPLOAD_PATH="${TOP_PATH}"
-    REMOTE_PATH="${DRIVE_NAME}:${DRIVE_PATH}/${REMOVE_DOWNLOAD_PATH%%/*}"
+    REMOTE_PATH="$RCLONE_DESTINATION/${REMOVE_DOWNLOAD_PATH%%/*}"
     CLEAN_UP
     UPLOAD
     exit 0
 elif [ "${TOP_PATH}" != "${FILE_PATH}" ] && [ $2 -eq 1 ]; then # 第三方度盘工具下载（子文件夹或多级目录等情况下的单文件下载）、BT下载（文件夹内文件数等于1），移动文件到设定的网盘文件夹下的相同路径文件夹。
     UPLOAD_PATH="${FILE_PATH}"
-    REMOTE_PATH="${DRIVE_NAME}:${DRIVE_PATH}/${REMOVE_DOWNLOAD_PATH%/*}"
+    REMOTE_PATH="$RCLONE_DESTINATION/${REMOVE_DOWNLOAD_PATH%/*}"
     UPLOAD
     exit 0
 fi
