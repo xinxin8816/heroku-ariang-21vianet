@@ -12,14 +12,14 @@ This repository forked from maple3142/heroku-aria2c and can't merged.<br>
 
 ## Abuse Warning 滥用警告
 
-**This project uses a lot of resources. 这个项目使用大量资源。**
+**This app uses a lot of resources. 这个应用使用大量资源。**
 
 **Your Heroku account may be suspend. 可能会导致封号。**
 
 ## Improvement 改进
 
 1. Compatible with China OneDrive by 21vianet. 兼容由世纪互联运营的中国大陆版 OneDrive。
-2. Support mount multiple cloud drive. 支持多网盘挂载同步。
+2. Support mount multiple cloud drive. 支持双网盘挂载同步。
 3. Improve performance of the built-in Aria2 and Rclone. 大幅提升内置 Aria2 和 Rclone 性能。
 
 ## Mount Cloud Drive With Rclone 挂载网盘
