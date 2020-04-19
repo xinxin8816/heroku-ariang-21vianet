@@ -51,24 +51,19 @@ DOWNLOAD_PATH='downloads'
 FILE_PATH=$3                                          # Aria2传递给脚本的文件路径。BT下载有多个文件时该值为文件夹内第一个文件，如/root/Download/a/b/1.mp4
 REMOVE_DOWNLOAD_PATH=${FILE_PATH#${DOWNLOAD_PATH}/}   # 路径转换，去掉开头的下载路径。
 TOP_PATH=${DOWNLOAD_PATH}/${REMOVE_DOWNLOAD_PATH%%/*} # 路径转换，BT下载文件夹时为顶层文件夹路径，普通单文件下载时与文件路径相同。
-RED_FONT_PREFIX="\033[31m"
-LIGHT_GREEN_FONT_PREFIX="\033[1;32m"
-YELLOW_FONT_PREFIX="\033[1;33m"
-LIGHT_PURPLE_FONT_PREFIX="\033[1;35m"
-FONT_COLOR_SUFFIX="\033[0m"
-INFO="[${LIGHT_GREEN_FONT_PREFIX}INFO${FONT_COLOR_SUFFIX}]"
-ERROR="[${RED_FONT_PREFIX}ERROR${FONT_COLOR_SUFFIX}]"
-WARRING="[${YELLOW_FONT_PREFIX}WARRING${FONT_COLOR_SUFFIX}]"
+INFO="[INFO]"
+ERROR="[ERROR]"
+WARRING="[WARRING]"
 
 TASK_INFO() {
     echo -e "
--------------------------- [${YELLOW_FONT_PREFIX}TASK INFO${FONT_COLOR_SUFFIX}] --------------------------
-${LIGHT_PURPLE_FONT_PREFIX}Download path:${FONT_COLOR_SUFFIX} ${DOWNLOAD_PATH}
-${LIGHT_PURPLE_FONT_PREFIX}File path:${FONT_COLOR_SUFFIX} ${FILE_PATH}
-${LIGHT_PURPLE_FONT_PREFIX}Upload path:${FONT_COLOR_SUFFIX} ${UPLOAD_PATH}
-${LIGHT_PURPLE_FONT_PREFIX}Remote path A:${FONT_COLOR_SUFFIX} ${REMOTE_PATH}
-${LIGHT_PURPLE_FONT_PREFIX}Remote path B:${FONT_COLOR_SUFFIX} ${REMOTE_PATH_2}
--------------------------- [${YELLOW_FONT_PREFIX}TASK INFO${FONT_COLOR_SUFFIX}] --------------------------
+-------------------------- [TASK INFO] --------------------------
+Download path: ${DOWNLOAD_PATH}
+File path: ${FILE_PATH}
+Upload path: ${UPLOAD_PATH}
+Remote path A: ${REMOTE_PATH}
+Remote path B: ${REMOTE_PATH_2}
+-------------------------- [TASK INFO] --------------------------
 "
 }
 
@@ -95,6 +90,8 @@ UPLOAD_FILE() {
             [ -e "${DOT_ARIA2_FILE}" ] && rm -vf "${DOT_ARIA2_FILE}"
             rclone rmdirs -v "${DOWNLOAD_PATH}" --leave-root
             echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Upload done: ${UPLOAD_PATH}"
+			rclone delete -v "${UPLOAD_PATH}"
+			echo "$(($(cat numUpload)-1))" > numUpload # Minus 1
             break
         else
             RETRY=$((${RETRY} + 1))
@@ -105,8 +102,6 @@ UPLOAD_FILE() {
             )
             sleep 3
         fi
-		rclone delete -v "${UPLOAD_PATH}"
-		echo "$(($(cat numUpload)-1))" > numUpload # Minus 1
     done
 }
 
