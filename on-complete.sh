@@ -34,11 +34,11 @@ export RCLONE_CONFIG=rclone.conf
 #export RCLONE_CACHE_CHUNK_TOTAL_SIZE=10G
 
 # RCLONE 上传失败重试次数，默认 3
-# RCLONE Upload failed retry count, default 3
+# RCLONE Upload failed retry count, the default is 3
 #export RCLONE_RETRIES=3
 
 # RCLONE 上传失败重试等待时间，默认禁用，单位 s, m, h
-# RCLONE Upload failure retry wait time, disabled by default, unit s, m, h
+# RCLONE Upload failure retry wait time, the default is disabled, unit s, m, h
 export RCLONE_RETRIES_SLEEP=30s
 
 # RCLONE 异常退出重试次数
@@ -85,6 +85,7 @@ UPLOAD_FILE() {
 		echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
         rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH}"
         RCLONE_EXIT_CODE=$?
+		RCLONE_EXIT_CODE_2=0
 		if [ -n "${RCLONE_DESTINATION_2}" ]; then
 			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}"
 			RCLONE_EXIT_CODE_2=$?
