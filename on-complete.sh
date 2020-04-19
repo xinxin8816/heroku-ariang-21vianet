@@ -17,6 +17,10 @@
 
 ## 高级设置 advanced settings ##
 
+# RCLONE 配置文件路径
+# RCLONE Configuration file path
+export RCLONE_CONFIG=rclone.conf
+
 # RCLONE 并行上传文件数，仅对单个任务有效。
 # RCLONE The number of files uploaded in parallel is only valid for a single task.
 #export RCLONE_TRANSFERS=4
