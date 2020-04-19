@@ -84,9 +84,12 @@ UPLOAD_FILE() {
         )
 		echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
         rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH}"
-        rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}"
         RCLONE_EXIT_CODE=$?
-        if [ ${RCLONE_EXIT_CODE} -eq 0 ]; then
+		if [ -n "${RCLONE_DESTINATION_2}"]; then
+			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}"
+			RCLONE_EXIT_CODE_2=$?
+		fi
+        if [ ${RCLONE_EXIT_CODE} -eq 0 && ${RCLONE_EXIT_CODE_2} -eq 0]; then
             [ -e "${DOT_ARIA2_FILE}" ] && rm -vf "${DOT_ARIA2_FILE}"
             rclone rmdirs -v "${DOWNLOAD_PATH}" --leave-root
             echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Upload done: ${UPLOAD_PATH}"
@@ -141,7 +144,7 @@ elif [ "${TOP_PATH}" != "${FILE_PATH}" ] && [ $2 -gt 1 ]; then # BT下载（文�
 elif [ "${TOP_PATH}" != "${FILE_PATH}" ] && [ $2 -eq 1 ]; then # 第三方度盘工具下载（子文件夹或多级目录等情况下的单文件下载）、BT下载（文件夹内文件数等于1），移动文件到设定的网盘文件夹下的相同路径文件夹。
     UPLOAD_PATH="${FILE_PATH}"
     REMOTE_PATH="${RCLONE_DESTINATION}/${REMOVE_DOWNLOAD_PATH%/*}"
-    REMOTE_PATH_2="${RCLONE_DESTINATION_2}/${REMOVE_DOWNLOAD_PATH%/*}"
+	REMOTE_PATH_2="${RCLONE_DESTINATION_2}/${REMOVE_DOWNLOAD_PATH%/*}"
     UPLOAD
     exit 0
 fi
