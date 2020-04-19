@@ -83,8 +83,9 @@ UPLOAD_FILE() {
             echo -e "$(date +"%m/%d %H:%M:%S") ${ERROR} Upload failed! Retry ${RETRY}/${RETRY_NUM} ..."
             echo
         )
-        rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH}" --config="rclone.conf"
-        rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}" --config="rclone.conf"
+		echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
+        rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH}"
+        rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}"
         RCLONE_EXIT_CODE=$?
         if [ ${RCLONE_EXIT_CODE} -eq 0 ]; then
             [ -e "${DOT_ARIA2_FILE}" ] && rm -vf "${DOT_ARIA2_FILE}"
@@ -101,6 +102,7 @@ UPLOAD_FILE() {
             sleep 3
         fi
 		rclone delete -v "${UPLOAD_PATH}"
+		echo "$(($(cat numUpload)-1))" > numUpload # Minus 1
     done
 }
 
