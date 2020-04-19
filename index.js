@@ -74,20 +74,26 @@ if (process.env.HEROKU_APP_NAME) {
 			},
 			async (err, resp, body) => {
 				console.log('preventIdling: getGlobalStat response', body)
+				const { numActive, numWaiting } = body.result
 				const numUpload = await readNumUpload()
 				console.log(
 					'preventIdling: numbers',
+					numActive,
+					numWaiting,
 					numUpload
 				)
 				if (
-					parseInt(numUpload) > 0
+					parseInt(numActive) +
+						parseInt(numWaiting) +
+						parseInt(numUpload) >
+					0
 				) {
 					console.log('preventIdling: make request to prevent idling')
 					request(APP_URL)
 				}
 			}
 		)
-		setTimeout(preventIdling, 20 * 60 * 1000) // 20 min
+		setTimeout(preventIdling, 5 * 60 * 1000) // 5 min
 	}
 	preventIdling()
 }
