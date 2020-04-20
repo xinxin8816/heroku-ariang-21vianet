@@ -1,6 +1,6 @@
 # Heroku-AriaNG-21vianet. Heroku-AriaNG 世纪互联版
 One-click to build AriaNG on Heroku, and upload to cloud drive when the file download completed.<br>
-在 Heroku 上一键搭建 AriaNG ，并在下载完成后上传文件至网盘。
+在 Heroku 上一键搭建 AriaNG ，并在文件下载完成后上传至网盘。
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -12,26 +12,28 @@ This repository forked from maple3142/heroku-aria2c and can't merged.<br>
 
 ## Abuse Warning 滥用警告
 
-**This app uses a lot of resources. 这个应用使用大量资源。**
+**This APP designed for best performance so uses a lot of resources.**<br>
+**本应用为最佳性能设计而使用大量资源。**
 
-**Your Heroku account may be suspend. 可能会导致封号。**
+**Please be careful with that your Heroku account may be suspend.**<br>
+**请注意可能会导致封号。**
 
 ## Improvement 改进
 
 1. Compatible with China OneDrive by 21vianet. 兼容由世纪互联运营的中国大陆版 OneDrive。
-2. Support mount multiple cloud drive. 支持双网盘挂载同步。
-3. Improve performance of the built-in Aria2 and Rclone. 大幅提升内置 Aria2 和 Rclone 性能。
+2. Support mount double cloud drive. 支持双网盘挂载同步。
+3. Improve performance of the built-in Aria2c and Rclone. 大幅提升内置 Aria2c 和 Rclone 性能。
 
 ## Mount Cloud Drive With Rclone 挂载网盘
 
-1. Setup Rclone by following offical instructions: https://rclone.org/docs/. Chinese users setup with 21vianet peach. You can find your config from there.
+1. Setup Rclone by following offical instructions: https://rclone.org/docs/. Chinese users setup with 21vianet peach. You can find your config from here.
 
 ```
 Windows: %userprofile%\.config\rclone\rclone.conf
 Linux: $HOME/.config/rclone/rclone.conf
 ```
 
-2. Find your `rclone.conf` file, it should look like this:
+2. Open your `rclone.conf` file, it should look like this:
 
 ```conf
 [DRIVENAME A]
