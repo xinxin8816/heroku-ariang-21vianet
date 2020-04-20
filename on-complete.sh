@@ -76,13 +76,13 @@ CLEAN_UP() {
 
 UPLOAD_FILE() {
     RETRY=0
+	echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
     while [ ${RETRY} -le ${RETRY_NUM} ]; do
         [ ${RETRY} != 0 ] && (
             echo
             echo -e "$(date +"%m/%d %H:%M:%S") ${ERROR} Upload failed! Retry ${RETRY}/${RETRY_NUM} ..."
             echo
         )
-		echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
         rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH}"
         RCLONE_EXIT_CODE=$?
 		RCLONE_EXIT_CODE_2=0
@@ -95,7 +95,6 @@ UPLOAD_FILE() {
             rclone rmdirs -v "${DOWNLOAD_PATH}" --leave-root
             echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Upload done: ${UPLOAD_PATH}"
 			rclone delete -v "${UPLOAD_PATH}"
-			echo "$(($(cat numUpload)-1))" > numUpload # Minus 1
             break
         else
             RETRY=$((${RETRY} + 1))
@@ -107,6 +106,7 @@ UPLOAD_FILE() {
             sleep 3
         fi
     done
+	echo "$(($(cat numUpload)-1))" > numUpload # Minus 1
 }
 
 UPLOAD() {
