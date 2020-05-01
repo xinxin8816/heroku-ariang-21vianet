@@ -20,18 +20,22 @@ This repository forked from maple3142/heroku-aria2c and can't merged.<br>
 
 ## Improvement 改进
 
-1. Compatible with China OneDrive by 21vianet. 兼容由世纪互联运营的中国大陆版 OneDrive。
+1. Rclone with 21vianet patch and Gclone mod. 融合了世纪互联补丁和 Gclone 模组的 Rclone。
 2. Support mount double cloud drive. 支持双网盘挂载同步。
 3. Improve performance of the built-in Aria2c and Rclone. 大幅提升内置 Aria2c 和 Rclone 性能。
 
-## Mount Cloud Drive With Rclone 挂载网盘
+## Connect Cloud Drive With Rclone 连接网盘
 
-1. Setup Rclone by following offical instructions: https://rclone.org/docs/. Chinese users setup with 21vianet peach. You can find your config from here.
+1. Setup Rclone by following [Rclone Docs](https://rclone.org/docs/).<br> 
+Optional: using service account setup with [Gclone Rradme](https://github.com/donwa/gclone) to break Google Drive 750GB limit, Chinese users setup with 21vianet patch to connect OneDrive by 21vianet.<br> 
+You can find your config from there:
 
 ```
 Windows: %userprofile%\.config\rclone\rclone.conf
 Linux: $HOME/.config/rclone/rclone.conf
 ```
+
+Rclone with 21vianet patch and Gclone mod provided by xhuang.
 
 2. Open your `rclone.conf` file, it should look like this:
 
