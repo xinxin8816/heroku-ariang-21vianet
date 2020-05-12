@@ -27,7 +27,7 @@ export RCLONE_CONFIG=rclone.conf
 
 # RCLONE 块的大小，默认5M，理论上是越大上传速度越快，同时占用内存也越多。如果设置得太大，可能会导致进程中断。
 # RCLONE The size of the block, the default is 5M. Theoretically, the larger the upload speed, the faster it will occupy more memory. If the setting is too large, the process may be interrupted.
-#export RCLONE_CACHE_CHUNK_SIZE=5M
+export RCLONE_CACHE_CHUNK_SIZE=3M
 
 # RCLONE 块可以在本地磁盘上占用的总大小，默认10G。
 # RCLONE The total size that the block can occupy on the local disk, the default is 10G.
@@ -80,7 +80,7 @@ UPLOAD_FILE() {
     while [ ${RETRY} -le ${RETRY_NUM} ]; do
         [ ${RETRY} != 0 ] && (
             echo
-            echo -e "$(date +"%m/%d %H:%M:%S") ${ERROR} Upload failed! Retry ${RETRY}/${RETRY_NUM} ..."
+            echo -e "$(date +"%m/%d %H:%M:%S") ${ERROR} ${UPLOAD_PATH} Upload failed! Retry ${RETRY}/${RETRY_NUM} ..."
             echo
         )
         rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH}"
