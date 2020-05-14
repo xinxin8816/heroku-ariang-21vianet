@@ -33,24 +33,7 @@ app.use(
 	})
 )
 app.use('/ariang', express.static(__dirname + '/ariang'))
-app.get('/', (req, res) => {
-	res.send(`
-<title>404 not found</title>
-<label for="secret">Secret:</label>
-<input id="secret" type="text">
-<button id="panel">Go to panel</button>
-<button id="downloads">View downloaded files</button><br>
-Partial Copyright © <a href="https://qxin.info">xinxin8816</a>.
-<script>
-panel.onclick=function(){
-	open('/ariang/#!/settings/rpc/set/wss/'+location.hostname+'/443/jsonrpc/'+btoa(secret.value),'_blank')
-}
-downloads.onclick=function(){
-	open('/downloads/'+btoa(secret.value)+'/')
-}
-</script>
-`)
-})
+app.use('/', express.static(__dirname + '/index'))
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))
 
 if (process.env.HEROKU_APP_NAME) {
