@@ -23,21 +23,22 @@ This repository forked from maple3142/heroku-aria2c and can't merged.<br>
 1. Rclone with 21vianet patch and Gclone mod. 融合了世纪互联补丁和 Gclone 模组的 Rclone。
 2. Support mount double cloud drive. 支持双网盘挂载同步。
 3. Improve performance of the built-in Aria2c and Rclone. 大幅提升内置 Aria2c 和 Rclone 性能。
+4. Fix some little issues in fork source. 修复项目源的一些其他小问题。
 
 ## Connect Cloud Drive With Rclone 连接网盘
 
-1. Setup Rclone by following [Rclone Docs](https://rclone.org/docs/).<br> 
-Optional: using service account setup with [Gclone Readme](https://github.com/donwa/gclone) to break Google Drive 750GB limit, Chinese users setup with 21vianet patch to connect OneDrive by 21vianet.<br> 
+1. Setup Rclone by following [Rclone Docs](https://rclone.org/docs/), Chinese users can setup with 21vianet patch to connect OneDrive by 21vianet.<br> 
 You can find your config from there:
 
 ```
 Windows: %userprofile%\.config\rclone\rclone.conf
 Linux: $HOME/.config/rclone/rclone.conf
 ```
+Optional: Using service account setup with [Gclone](https://github.com/donwa/gclone) to break Google Drive 750GB limit, or easier connect to folder or Team Drive by destination ID. Create a new folder, such as `/accounts/`, upload your json in it. Open rclone config and edit `service_account_file_path = /app/accounts/` as the json paths.
 
 Rclone with 21vianet patch and Gclone mod provided by xhuang.
 
-2. Open your `rclone.conf` file, it should look like this:
+2. Your `rclone.conf` file, it should look like this:
 
 ```conf
 [DRIVENAME A]
@@ -63,18 +64,23 @@ others entries...
 4. Replace all linebreaks with `\n`
 5. Deploy with the button above, and paste that text in `RCLONE_CONFIG`
 6. Set `RCLONE_DESTINATION` to a path you want to store your downloaded in `[DRIVENAME A]`, format is `[DRIVENAME A]:[REMOVE PATH A]`
-7. If you mount a second cloud drive, Set `RCLONE_DESTINATION_2` same as 6
+7. If you mount a second cloud drive, Set `RCLONE_DESTINATION_2` same as step 6
 
 ## FAQ 常见问题
-### Why it automatically stop after 30 minutes, and files were lost.
+### Why it automatically stop after 30 minutes, and files were lost?
 Heroku Free Dyno will idle when there is no incoming request within 30 minutes, and your files will be deleted, so use Rclone to breaking this or use Heroku Hobby Dyno.
+
+### Why it still stop after 24 hours when i have used rclone?
+Heroku-AriaNG APP will automatically make request to prevent idling when connect cloud drive with Rclone, but Heroku Dyno reset every 24 hours is inevitable.
+
 ### How to view upload process?
 Go to Heroku Dashboard, and view application logs.
+
 ### How to edit rclone or aria2c config?
 Open `on-complete.sh` and `aria2c.conf`, some global variables that can be edit, but believe me, the best parameters for best performance have been provided.
-### How to add my service account json for Google Drive in Gclone mod?
-Create a new folder, such as `/account/`, upload your json in it. Open rclone config and edit `service_account_file_path = /app/account/` as the json paths.
+
 ### Can I delete files?
 Sure. The file will be automatically deleted after the upload is complete. you can also delete the file by deleting the aria2 task.
+
 ### Can you provide more detailed configuration and deployment instructions
-Nope. This README are enough.
+Nope. This README is enough.
