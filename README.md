@@ -66,15 +66,23 @@ others entries...
 7. If you mount a second cloud drive, Set `RCLONE_DESTINATION_2` same as 6
 
 ## FAQ 常见问题
-### Why it automatically stop after 30 minutes, and files were lost.
+### Why it automatically stop after 30 minutes, and files were lost?
 Heroku Free Dyno will idle when there is no incoming request within 30 minutes, and your files will be deleted, so use Rclone to breaking this or use Heroku Hobby Dyno.
+
+### Why it still stop after 24 hours when i have used rclone?
+Heroku-AriaNG APP will automatically make request to prevent idling when connect cloud drive with Rclone, but Heroku Dyno reset every 24 hours is inevitable.
+
 ### How to view upload process?
 Go to Heroku Dashboard, and view application logs.
+
 ### How to edit rclone or aria2c config?
 Open `on-complete.sh` and `aria2c.conf`, some global variables that can be edit, but believe me, the best parameters for best performance have been provided.
+
 ### How to add my service account json for Google Drive in Gclone mod?
 Create a new folder, such as `/account/`, upload your json in it. Open rclone config and edit `service_account_file_path = /app/account/` as the json paths.
+
 ### Can I delete files?
 Sure. The file will be automatically deleted after the upload is complete. you can also delete the file by deleting the aria2 task.
+
 ### Can you provide more detailed configuration and deployment instructions
-Nope. This README are enough.
+Nope. This README is enough.
