@@ -117,7 +117,7 @@ UPLOAD() {
 
 AUTOZIP() {
     echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Start pack zip..."
-	zip -r ${REMOVE_DOWNLOAD_PATH%%/*}.zip ${TOP_PATH}
+	zip -r ${TOP_PATH}.zip ${TOP_PATH}
 	echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Pack zip done: ${UPLOAD_PATH}"
 }
 
