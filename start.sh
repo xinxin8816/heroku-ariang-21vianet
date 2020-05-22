@@ -7,7 +7,6 @@ if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
 	chmod +x on-complete.sh
 elif [ $AUTO_ZIP = "True" ]; then
 	echo "AUTO ZIP activated"
-	echo -e "[Null]" > rclone.conf
 	echo "on-download-complete=./on-complete.sh" >> aria2c.conf
 	chmod +x on-complete.sh
 fi
