@@ -1,10 +1,10 @@
 # Heroku-AriaNG-21vianet. Heroku-AriaNG 世纪互联版
-One-click to build AriaNG on Heroku, and upload to cloud drive when the file download completed.<br>
-在 Heroku 上一键搭建 AriaNG ，并在文件下载完成后上传至网盘。
+One-click to build AriaNG on Heroku, and ZIP or upload to cloud drive when the file download completed.<br>
+在 Heroku 上一键搭建 AriaNG ，并在文件下载完成后打包或直接上传至网盘。
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Using Rclone with 21vianet mod and Aria2, even UNRAR online by command terminal flexibly? Try this [Heroku Rclone 21vianet](https://github.com/xinxin8816/heroku-rclone-21vianet)<br>
+Using Aria2 and Rclone with 21vianet patch and Gclone mod , even UNRAR online by command terminal flexibly? Try this [Heroku Rclone 21vianet](https://github.com/xinxin8816/heroku-rclone-21vianet)<br>
 想通过更灵活的命令行使用 Aria2、Rclone，甚至是 RAR 在线解压？试试这个 [Heroku Rclone 世纪互联版](https://github.com/xinxin8816/heroku-rclone-21vianet)
 
 This repository forked from maple3142/heroku-aria2c and can't merged.<br>
@@ -20,10 +20,10 @@ This repository forked from maple3142/heroku-aria2c and can't merged.<br>
 
 ## Improvement 改进
 
-1. Rclone with 21vianet patch and Gclone mod. 融合了世纪互联补丁和 Gclone 模组的 Rclone。
+1. Rclone engine with 21vianet patch and Gclone mod. 融合了世纪互联补丁和 Gclone 模组的 Rclone 引擎。
 2. Support mount double cloud drive. 支持双网盘挂载同步。
-3. Improve performance of the built-in Aria2c and Rclone. 大幅提升内置 Aria2c 和 Rclone 性能。
-4. Support pack multiple files into a ZIP package. 支持将多文件打包成一个 ZIP 包。
+3. Support pack multiple files into a ZIP package. 支持将多文件打包成一个 ZIP 包。
+4. Improve performance of the built-in Aria2c and Rclone. 大幅提升内置 Aria2c 和 Rclone 性能。
 5. Fix some little issues in fork source. 修复项目源的一些其他小问题。
 
 ## Connect Cloud Drive With Rclone 连接网盘
@@ -68,6 +68,7 @@ others entries...
 7. If you mount a second cloud drive, Set `RCLONE_DESTINATION_2` same as step 6
 
 ## FAQ 常见问题
+
 ### Why it automatically stop after 30 minutes, and files were lost?
 Heroku Free Dyno will idle when there is no incoming request within 30 minutes, and your files will be deleted, so use Rclone to breaking this or use Heroku Hobby Dyno.
 
@@ -80,8 +81,8 @@ Go to Heroku Dashboard, and view application logs.
 ### How to edit rclone or aria2c config?
 Open `on-complete.sh` and `aria2c.conf`, some global variables that can be edit, but believe me, the best parameters for best performance have been provided.
 
-### Can I delete files?
-Sure. The file will be automatically deleted after the upload is complete. you can also delete the file by deleting the aria2 task.
+### How to delete files?
+The file will be automatically deleted after the upload is complete. you can also delete the file by deleting the aria2 task.
 
 ### Can you provide more detailed configuration and deployment instructions
 Nope. This README is enough.

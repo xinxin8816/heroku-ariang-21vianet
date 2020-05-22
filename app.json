@@ -13,7 +13,7 @@
 			"value": ""
 		},
 		"AUTO_ZIP": {
-			"description": "(BETA) When downloaded multiple files by BT, pack them into a ZIP package. Input \"True\" or \"False\"",
+			"description": "(BETA) When downloaded multiple files by BT, pack them into a ZIP package. Input \"True\" or \"False\". CAN NOT WORKING WITH RCLONE",
 			"value": "False"
 		},
 		"RCLONE_CONFIG": {
@@ -22,13 +22,11 @@
 		},
 		"RCLONE_DESTINATION": {
 			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
-			"required": false,
-			"value": "Google:tmp"
+			"required": false
 		},
 		"RCLONE_DESTINATION_2": {
 			"description": "If you mount a second cloud drive, then fill in \"[drivename B]:[remove path B]\"",
-			"required": false,
-			"value": "OneDrive:tmp"
+			"required": false
 		}
 	},
 	"buildpacks": [
