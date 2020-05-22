@@ -143,7 +143,7 @@ if [ "${AUTO_ZIP}" = "True" ]; then
 	AUTOZIP
 fi
 
-if [[ -n "${RCLONE_DESTINATION}" ]]; then
+if [[ -z "${RCLONE_DESTINATION}" ]]; then
 	if [ "${TOP_PATH}" = "${FILE_PATH}" ] && [ $2 -eq 1 ]; then # 普通单文件下载，移动文件到设定的网盘文件夹。
 		UPLOAD_PATH="${FILE_PATH}"
 		REMOTE_PATH="${RCLONE_DESTINATION}/"
@@ -164,6 +164,8 @@ if [[ -n "${RCLONE_DESTINATION}" ]]; then
 		UPLOAD
 		exit 0
 	fi
+else
+	exit 0
 fi
 
 echo -e "${ERROR} Unknown error."
