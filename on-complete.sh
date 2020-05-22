@@ -117,7 +117,7 @@ UPLOAD() {
 
 AUTOZIP() {
     echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Start pack zip..."
-	zip -r "${TOP_PATH}".zip "${TOP_PATH}"
+	zip -r "${TOP_PATH}".zip "${TOP_PATH}" -0
 	echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Pack zip done: ${TOP_PATH}"
 	if [[ -z "$RCLONE_DESTINATION" ]]; then
 		rclone delete -v "${TOP_PATH}"

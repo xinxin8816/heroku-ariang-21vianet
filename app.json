@@ -13,7 +13,7 @@
 			"value": ""
 		},
 		"AUTO_ZIP": {
-			"description": "(BETA) When downloaded multiple files by BT, pack them into a ZIP package. Input \"True\" or \"False\"",
+			"description": "(BETA) Pack multiple files that downloaded by BT into a ZIP package in download folder. Upload tasks not affected. fill in \"True\" or \"False\"",
 			"value": "False"
 		},
 		"RCLONE_CONFIG": {

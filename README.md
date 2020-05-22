@@ -75,7 +75,7 @@ Heroku Free Dyno will idle when there is no incoming request within 30 minutes, 
 ### Why it still stop after 24 hours when i have used rclone?
 Heroku-AriaNG APP will automatically make request to prevent idling when connect cloud drive with Rclone, but Heroku Dyno reset every 24 hours is inevitable.
 
-### How to view upload process?
+### How to view ZIP packing or uploading process?
 Go to Heroku Dashboard, and view application logs.
 
 ### How to edit rclone or aria2c config?
