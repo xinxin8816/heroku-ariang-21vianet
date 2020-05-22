@@ -5,12 +5,16 @@
 	"keywords": ["AriaNG"],
 	"env": {
 		"HEROKU_APP_NAME": {
-			"description": "This should be the same as \"App name\" above.",
+			"description": "This should be the same as \"App name\" above",
 			"value": ""
 		},
 		"ARIA2C_SECRET": {
 			"description": "Aria2c's secret",
 			"value": ""
+		},
+		"AUTO_ZIP": {
+			"description": "(BETA) When downloaded multiple files by BT, pack them into a ZIP package. Input \"True\" or \"False\"",
+			"value": "False"
 		},
 		"RCLONE_CONFIG": {
 			"description": "Rclone config to mount in one line, replace line breaks with \"\\n\"",

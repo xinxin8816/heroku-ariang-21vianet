@@ -115,6 +115,12 @@ UPLOAD() {
     UPLOAD_FILE
 }
 
+AUTOZIP() {
+    echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Start pack zip..."
+	zip -r ${REMOVE_DOWNLOAD_PATH%%/*}.zip ${TOP_PATH}
+	echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Pack zip done: ${UPLOAD_PATH}"
+}
+
 if [ -z $2 ]; then
     echo && echo -e "${ERROR} This script can only be used by passing parameters through Aria2."
     echo && echo -e "${WARRING} 直接运行此脚本可能导致无法开机！"
@@ -140,6 +146,9 @@ elif [ "${TOP_PATH}" != "${FILE_PATH}" ] && [ $2 -gt 1 ]; then # BT下载（文�
     REMOTE_PATH="${RCLONE_DESTINATION}/${REMOVE_DOWNLOAD_PATH%%/*}"
 	REMOTE_PATH_2="${RCLONE_DESTINATION_2}/${REMOVE_DOWNLOAD_PATH%%/*}"
     CLEAN_UP
+	if [ ${AUTO_ZIP} == "True" ]; then
+		AUTOZIP
+	fi
     UPLOAD
     exit 0
 elif [ "${TOP_PATH}" != "${FILE_PATH}" ] && [ $2 -eq 1 ]; then # 第三方度盘工具下载（子文件夹或多级目录等情况下的单文件下载）、BT下载（文件夹内文件数等于1），移动文件到设定的网盘文件夹下的相同路径文件夹。
