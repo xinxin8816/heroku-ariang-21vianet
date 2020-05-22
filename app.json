@@ -13,7 +13,7 @@
 			"value": ""
 		},
 		"AUTO_ZIP": {
-			"description": "(BETA) When downloaded multiple files by BT, pack them into a ZIP package. Input \"True\" or \"False\". CAN NOT WORKING WITH RCLONE",
+			"description": "(BETA) When downloaded multiple files by BT, pack them into a ZIP package. Input \"True\" or \"False\"",
 			"value": "False"
 		},
 		"RCLONE_CONFIG": {
