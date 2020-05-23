@@ -119,7 +119,7 @@ AUTOZIP() {
     echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Start pack zip..."
 	zip -r "${TOP_PATH}".zip "${TOP_PATH}" -0
 	echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Pack zip done: ${TOP_PATH}"
-	if [[ -z "$RCLONE_DESTINATION" ]]; then
+	if [[ -z "$RCLONE_CONFIG" && -z "$RCLONE_DESTINATION" ]]; then
 		rclone delete -v "${TOP_PATH}"
 	fi
 }
@@ -143,7 +143,7 @@ if [ "${AUTO_ZIP}" = "True" ]; then
 	AUTOZIP
 fi
 
-if [[ -z "${RCLONE_DESTINATION}" ]]; then
+if [[ -n "$RCLONE_CONFIG" && -n "$RCLONE_DESTINATION" ]]; then
 	if [ "${TOP_PATH}" = "${FILE_PATH}" ] && [ $2 -eq 1 ]; then # 普通单文件下载，移动文件到设定的网盘文件夹。
 		UPLOAD_PATH="${FILE_PATH}"
 		REMOTE_PATH="${RCLONE_DESTINATION}/"
