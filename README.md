@@ -70,6 +70,8 @@ others entries...
 ### Why it automatically stop after 30 minutes, and files were lost?
 Heroku Free Dyno will idle when there is no incoming request within 30 minutes, and your files will be deleted, so use Rclone to breaking this or use Heroku Hobby Dyno.
 
+By the way, the use of memory exceeds the limit of 512M for a long time, Heroku dyno also will idle.
+
 ### Why it still stop after 24 hours when i have used rclone?
 Heroku-AriaNG APP will automatically make request to prevent idling when connect cloud drive with Rclone, but Heroku Dyno reset every 24 hours is inevitable.
 
