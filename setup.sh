@@ -1,11 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install p7zip
-sudo apt-get install rar
-sudo apt-get install unrar
-sudo apt-get install p7zip-rar
-sudo apt-get install p7zip-full
-
 # Install rclone static binary
 wget -q https://github.com/xinxin8816/heroku-aria2c-21vianet/raw/master/rclone.zip
 unzip -q rclone.zip
