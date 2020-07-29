@@ -1,10 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install p7zip
-sudo apt-get install rar
-sudo apt-get install unrar
-sudo apt-get install p7zip-rar
-
 if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
 	echo "Rclone config detected"
 	echo -e "$RCLONE_CONFIG" > rclone.conf
