@@ -50,15 +50,15 @@ unpackzipfile(){
 		do
 			trypassds "$1" "$line"
 			if [ $? = 0 ];then
-				echo "      解压 $name 大成功！"
+				echo "解压 $name 大成功！"
 				if [ $delete = 1 ];then
 					rm "$1"
-					echo "      删除文件 $1 成功"
+					echo "删除文件 $1 成功"
 				fi
 				return 0
 			fi
 		done
-		echo "      解压 $name 失败"
+		echo "解压 $name 失败"
 		dir=`dirname "$1"`
 		if [ "$dst"  ]; then
 			dir="$dir"/"$dst"

@@ -25,6 +25,11 @@
 			"description": "If you mount a second cloud drive, then fill in \"[drivename B]:[remove path B]\"",
 			"required": false,
 			"value": "OneDrive:tmp"
+		},
+		"UNPACK_PASSWORDS": {
+			"description": "unpack passwords in one line, replace line breaks with \"\\n\"",
+			"required": false,
+			"value": ""
 		}
 	},
 	"buildpacks": [
