@@ -35,7 +35,6 @@
 	"buildpacks": [
 		{
 			"url": "heroku/nodejs"
-			"url": "https://github.com/blueport-io/heroku7zip.git"
 		}
 	]
 }

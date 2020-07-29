@@ -46,7 +46,7 @@ unpackzipfile(){
 		fi
 	return 0
 	else        
-		for line in `cat ./passwds.txt`
+		for line in `cat passwds.txt`
 		do
 			trypassds "$1" "$line"
 			if [ $? = 0 ];then
