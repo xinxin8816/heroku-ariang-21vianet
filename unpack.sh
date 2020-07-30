@@ -17,7 +17,7 @@ echo "尝试密码 ：$a"
 # 保存里面的文件
 files=`7za l "$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
 # 尝试解压    
-res=`7za x "$1" -o"${dir}" -y -p"$a" | grep "Everything"`
+res=`7za x "$1" -o"${dir}" -y -p"$a"`
 if [  -n "$res" ] ;then
 echo "文件解压 $name 成功"
 return 0
