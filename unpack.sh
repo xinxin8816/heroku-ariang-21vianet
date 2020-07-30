@@ -34,7 +34,7 @@ trypassds(){
 }
 
 unpackzipfile(){
-	dir=`dirname "$1"`
+	dir=/app/`dirname "$1"`
 	name=`basename "$1"`
 	echo "解压文件：$name  解压目录：$dir"
 	trypassds "$1"
