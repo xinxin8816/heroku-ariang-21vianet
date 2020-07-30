@@ -18,7 +18,7 @@ trypassds(){
 	# 保存里面的文件
 	files=`unrar l /app/"$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
 	# 尝试解压    
-	res=`unrar x /app/"$1" -o"${dir}" -y -p"$a"`
+	res=`unrar x -o+ -y -p"$a" "${dir}" /app/"$1"`
 	if [  -n "$res" ] ;then
 		echo "文件解压 $name 成功"
 	return 0
