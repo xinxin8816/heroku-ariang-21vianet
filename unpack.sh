@@ -14,7 +14,7 @@ trypassds(){
 	fi
 	# 去除密码两边的空格和换行符
 	a=`eval echo "$2" | tr -d '\r'`
-	echo "尝试密码 ：$a"
+	echo "尝试密码：$a"
 	# 保存里面的文件
 	files=`7za l "$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
 	# 尝试解压    
@@ -46,7 +46,7 @@ unpackzipfile(){
 	fi
 	return 0
 	else        
-		for line in `cat $cur/passwds.txt`
+		for line in `cat /app/passwds.txt`
 		do
 		trypassds "$1" "$line"
 		if [ $? = 0 ];then
