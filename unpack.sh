@@ -18,8 +18,8 @@ trypassds(){
 	# 保存里面的文件
 	files=`7za l "$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
 	# 尝试解压    
-	res=`7za x "$1" -o"${dir}" -y -p"$a"`
-	if [  -n "$res" ] ;then
+	7za x "$1" -o"${dir}" -y -p"$a"
+	if [ $? = 0 ] ;then
 		echo "文件解压 $name 成功"
 	return 0
 	else
@@ -31,8 +31,8 @@ trypassds(){
 		done
 	return 1
 fi
-
 }
+
 unpackzipfile(){
 	dir=`dirname "$1"`
 	name=`basename "$1"`
@@ -58,7 +58,7 @@ unpackzipfile(){
 			return 0
 		fi
 		done
-		echo "      解压 $name 失败"
+		echo "解压 $name 失败"
 		dir=`dirname "$1"`
 		if [ "$dst"  ]; then
 			dir="$dir"/"$dst"
