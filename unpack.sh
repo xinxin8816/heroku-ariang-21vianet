@@ -16,9 +16,9 @@ trypassds(){
 	a=`eval echo "$2" | tr -d '\r'`
 	echo "尝试密码：$a"
 	# 保存里面的文件
-	files=`unrar l "$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
+	files=`unzip l "$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
 	# 尝试解压    
-	res=`unrar x "$1" -o"${dir}" -y -p"$a" | grep "Everything"`
+	res=`unzip x "$1" -o"${dir}" -y -p"$a" | grep "Everything"`
 	if [  -n "$res" ] ;then
 		echo "文件解压 $name 成功"
 	return 0
@@ -46,7 +46,7 @@ unpackzipfile(){
 		fi
 	return 0
 	else        
-		for line in `cat passwds.txt`
+		for line in `cat /app/passwds.txt`
 		do
 			trypassds "$1" "$line"
 			if [ $? = 0 ];then
