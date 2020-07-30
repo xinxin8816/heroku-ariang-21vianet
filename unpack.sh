@@ -7,7 +7,7 @@ cur=`dirname $0`
 dst="$2"
 
 trypassds(){
-	dir=/app/`dirname "$1"`
+	dir=`dirname "$1"`
 	name=`basename "$1"`    
 	if [ "$dst"  ]; then
 		dir="$dir/$dst"
@@ -34,7 +34,7 @@ trypassds(){
 }
 
 unpackzipfile(){
-	dir=/app/`dirname "$1"`
+	dir=`dirname "$1"`
 	name=`basename "$1"`
 	echo "解压文件：$name  解压目录：$dir"
 	trypassds "$1"
