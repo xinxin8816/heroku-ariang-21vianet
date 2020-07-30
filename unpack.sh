@@ -7,7 +7,7 @@ cur=`dirname $0`
 dst="$2"
 
 trypassds(){
-	dir=`dirname "$1"`
+	dir=/app/`dirname "$1"`
 	name=`basename "$1"`    
 	if [ "$dst"  ]; then
 		dir="$dir/$dst"
