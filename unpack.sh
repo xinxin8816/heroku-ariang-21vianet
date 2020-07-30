@@ -2,7 +2,7 @@
 
 #文件解压
 
-delete=1
+delete=0
 cur=`dirname $0`     
 dst="$2"
 trypassds(){
