@@ -16,9 +16,9 @@ trypassds(){
 	a=`eval echo "$2" | tr -d '\r'`
 	echo "尝试密码：$a"
 	# 保存里面的文件
-	files=`unrar l "$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
+	files=`unrar l /app/"$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
 	# 尝试解压    
-	res=`unrar x "$1" -o"${dir}" -y -p"$a" | grep "Everything"`
+	res=`unrar x /app/"$1" -o"${dir}" -y -p"$a" | grep "Everything"`
 	if [  -n "$res" ] ;then
 		echo "文件解压 $name 成功"
 	return 0
