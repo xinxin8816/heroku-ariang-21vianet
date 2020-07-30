@@ -18,7 +18,7 @@ trypassds(){
 	# 保存里面的文件
 	files=`unrar l /app/"$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
 	# 尝试解压    
-	res=`unrar x /app/"$1" -o"${dir}" -y -p"$a" | grep "Everything"`
+	res=`unrar x /app/"$1" -o"${dir}" -y -p"$a"`
 	if [  -n "$res" ] ;then
 		echo "文件解压 $name 成功"
 	return 0
@@ -79,7 +79,7 @@ unpackfile(){
 		unpackzipfile "$1"
 		return 1
 	else
-		dir=`dirname "$1"`
+		dir=/app/`dirname "$1"`
 	if [ "$dst"  ]; then
 		dir="$dir"/"$dst"
 	if [ ! -d "$dst" ];then
