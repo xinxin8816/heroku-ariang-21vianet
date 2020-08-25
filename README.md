@@ -4,6 +4,10 @@ One-click to build AriaNG on Heroku, and upload to cloud drive when the file dow
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+**Pay attention please: Some users report that deploying from this repo might result in your account being banned immediately. It is recommended to fork this project then deploy from your forked repo.**
+
+**请注意：据部分用户反馈，通过本项目仓库直接部署应用可能会导致立即被封号，推荐创建分支仓库后从分支部署应用**
+
 Using Rclone with 21vianet mod and Aria2, even UNRAR online by command terminal flexibly? Try this [Heroku Rclone 21vianet](https://github.com/xinxin8816/heroku-rclone-21vianet)<br>
 想通过更灵活的命令行使用 Aria2、Rclone，甚至是 RAR 在线解压？试试这个 [Heroku Rclone 世纪互联版](https://github.com/xinxin8816/heroku-rclone-21vianet)
 
@@ -16,7 +20,7 @@ This repository forked from maple3142/heroku-aria2c and can't merged.<br>
 **本应用为最佳性能设计而使用大量资源。**
 
 **Please be careful with that your Heroku account may be suspend.**<br>
-**请注意可能会导致封号。**
+**请注意长时间占用资源可能会导致封号。**
 
 ## Improvement 改进
 
