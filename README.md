@@ -5,9 +5,6 @@ Build AriaNG on Heroku, and upload to cloud drive when the file download complet
 Using Rclone with 21vianet mod and Aria2, even UNRAR online flexibly? Try this [Heroku Rclone 21vianet](https://github.com/xinxin8816/heroku-rclone-21vianet)<br>
 想更灵活的使用 Aria2、Rclone，甚至是 RAR 在线解压？试试这个 [Heroku Rclone 世纪互联版](https://github.com/xinxin8816/heroku-rclone-21vianet)
 
-This repository forked from maple3142/heroku-aria2c and can't merged.<br>
-这个项目是 maple3142/heroku-aria2c 的不可合并分支。
-
 ## Abuse Warning 滥用警告
 
 **This APP designed for best performance so uses a lot of resources.**<br>
@@ -24,6 +21,8 @@ This repository forked from maple3142/heroku-aria2c and can't merged.<br>
 4. Fix some little issues in fork source. 修复项目源的一些其他小问题。
 
 ## Deploy by Docker (Recommend)
+
+FAQ: [Do I have to use Docker?](#do-i-have-to-use-docker)
 
 ### Requirement 要求
 
@@ -112,7 +111,7 @@ Set `RCLONE_DESTINATION` to a path you want to store your downloaded in `[DRIVEN
 ### Do I have to use Docker?
 Not really, if you deployed previously and the APP is still working well, please enjoy it just like before.
 
-If you want to deploy a new app, I recommend using Docker to prevent account banned.
+If you want to deploy a new APP or rebuild the previously APP, I recommend using Docker to prevent account banned.
 
 ### Why it automatically stop after 30 minutes, and files were lost?
 Heroku Free Dyno will idle when there is no incoming request within 30 minutes, and your files will be deleted, so use Rclone to breaking this or use Heroku Hobby Dyno.
@@ -133,3 +132,6 @@ The file will be automatically deleted after the upload is complete. you can als
 
 ### Can you provide more detailed configuration and deployment instructions
 Nope. This README is enough.
+
+## Thanks
+Many thanks for maple3142/heroku-aria2c and P3TERX/aria2.conf.
