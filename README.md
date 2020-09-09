@@ -87,7 +87,7 @@ token = WHATEVER
 others entries...
 ```
 
-3. Find the drive you want to use, and copy its `type = ...` to  `... token = ...` section, and replace all linebreaks with `\n`.
+3. Find the drive you want to use, and copy its `[DRIVENAME A] ...` to  `... token = ...` section, and replace all linebreaks with `\n`.
 4. Set Rclone Config:
 
 if you deploying by Docker:<br>
