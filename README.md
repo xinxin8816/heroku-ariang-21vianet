@@ -58,13 +58,10 @@ You can find your config from there:
 Windows: %userprofile%\.config\rclone\rclone.conf
 Linux: $HOME/.config/rclone/rclone.conf
 ```
-Optional: Using service account setup with [Gclone](https://github.com/donwa/gclone) to break Google Drive 750GB limit, or easier connect to folder or Team Drive by destination ID. 
+Optional: Using service account setup with [Gclone](https://github.com/donwa/gclone) to break Google Drive 750GB limit, or easier connect to folder or Team Drive by destination ID. First, open your rclone config and edit `service_account_file_path = /app/accounts/` as the SA json paths.
 
-if you deploying by Docker:<br>
-Create a new folder in your local repository root path after git clone, such as `/accounts/`, copy your SA json in it. Open rclone config and edit `service_account_file_path = /app/accounts/` as the json paths.
-
-if you deploying by One-Click:<br>
-Fork this repository, and create a new folder in your forked repository, such as `/accounts/`, upload your SA json in it. Open rclone config and edit `service_account_file_path = /app/accounts/` as the json paths.
+* Deploy by Docker: Create a new folder in your local repository root path after git clone, such as `/accounts/`, copy your SA json in it.<br>
+* Deploy by One-Click: Fork this repository, and create a new folder in your forked repository, such as `/accounts/`, upload your SA json in it. 
 
 2. Your `rclone.conf` file, it should look like this:
 
@@ -88,24 +85,17 @@ token = WHATEVER
 others entries...
 ```
 
-3. Find the drive you want to use, and copy its `[DRIVENAME A] ...` to  `... token = ...` section, and replace all linebreaks with `\n`.
-4. Set Rclone Config:
+3. Set Rclone Config: Find the drive you want to use, and copy its `[DRIVENAME A] ...` to  `... token = ...` section, and replace all linebreaks with `\n`, and copy this TEXT.
 
-if you deploying by Docker:<br>
-Run `heroku config:set -a APP_NAME RCLONE_CONFIG=THAT_TEXT`.
+* Deploy by Docker: Run `heroku config:set -a APP_NAME RCLONE_CONFIG=THAT_TEXT`.<br>
+* Deploy by One-Click: Set `THAT_TEXT` in the `RCLONE_CONFIG` blank.
 
-if you deploying by One-Click:<br>
-Paste that text in `RCLONE_CONFIG`.
+4. Set Rclone Upload Destination: `[DRIVENAME A]:[REMOVE PATH A]` means upload to `[REMOVE PATH A]` in `[DRIVENAME A]`. `[DRIVENAME A]` is the drive friendly name in rclone config, `[REMOVE PATH A]` is a remote path. 
 
-5. Set Rclone Upload Destination:
+* Deploying by Docker: Run `heroku config:set -a APP_NAME RCLONE_DESTINATION=[DRIVENAME A]:[REMOVE PATH A]`.<br>
+* Deploying by One-Click: Set `[DRIVENAME A]:[REMOVE PATH A]` in the `RCLONE_DESTINATION` blank.
 
-if you deploying by Docker:<br>
-Run `heroku config:set -a APP_NAME RCLONE_DESTINATION=DOWNLOAD_DESTINATION`, `DOWNLOAD_DESTINATION` is a path starting with `/`.
-
-if you deploying by One-Click:<br>
-Set `RCLONE_DESTINATION` to a path you want to store your downloaded in `[DRIVENAME A]`, format is `[DRIVENAME A]:[REMOVE PATH A]`
-
-7. If you mount a second cloud drive, Set `RCLONE_DESTINATION_2` same as step 6.
+5. If you mount a second cloud drive, Set `RCLONE_DESTINATION_2` same as step 4.
 
 ## FAQ 常见问题
 
