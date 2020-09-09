@@ -18,7 +18,8 @@ Using Rclone with 21vianet mod and Aria2, even UNRAR online flexibly? Try this [
 1. Rclone with 21vianet patch and Gclone mod. 融合了世纪互联补丁和 Gclone 模组的 Rclone。
 2. Support mount double cloud drive. 支持双网盘挂载同步。
 3. Improve performance of the built-in Aria2c and Rclone. 大幅提升内置 Aria2c 和 Rclone 性能。
-4. Fix some little issues in fork source. 修复项目源的一些其他小问题。
+4. Unpack(Beta) ZIP/RAR/7Z with password or sub-volume. 解压分卷或带密码的压缩包（测试）。
+5. Fix some little issues in fork source. 修复项目源的一些其他小问题。
 
 ## Deploy by Docker (Recommend)
 
@@ -87,7 +88,7 @@ token = WHATEVER
 others entries...
 ```
 
-3. Find the drive you want to use, and copy its `[DRIVENAME A] ...` to  `... token = ...` section, and replace all linebreaks with `\n`.
+3. Find the drive you want to use, and copy its `type = ...` to  `... token = ...` section, and replace all linebreaks with `\n`.
 4. Set Rclone Config:
 
 if you deploying by Docker:<br>
