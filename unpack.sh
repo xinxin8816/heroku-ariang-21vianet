@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#文件解压
+# Unpack Archive Beta
 
 delete=0
 cur=`dirname $0`     
@@ -12,18 +12,14 @@ trypassds(){
 	if [ "$dst"  ]; then
 		dir="$dir/$dst"
 	fi
-	# 去除密码两边的空格和换行符
 	a=`eval echo "$2" | tr -d '\r'`
-	echo "尝试密码：$a"
-	# 保存里面的文件
-	files=`7za l "$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'` #文件里面的东西
-	# 尝试解压    
+	echo "Try Passwd：$a"
+	files=`7za l "$1" -p"$a"|grep -w "\.\.\.\.\."|awk -F" " '{print $6}'`
 	7za x "$1" -o"${dir}" -y -p"$a"
 	if [ $? = 0 ] ;then
-		echo "文件解压 $name 成功"
+		echo "Unpack $name Success"
 	return 0
 	else
-	#删除解压失败的残余
 		cd $dir
 		for line in $files
 		do
@@ -33,16 +29,16 @@ trypassds(){
 fi
 }
 
-unpackzipfile(){
+unpackonefile(){
 	dir=`dirname "$1"`
 	name=`basename "$1"`
-	echo "解压文件：$name  解压目录：$dir"
+	echo "Unpack：$name  Dir：$dir"
 	trypassds "$1"
 	if [ $? = 0 ];then
-		echo "解压 $name 成功"
+		echo "Unpack $name Success"
 	if [ $delete = 1 ];then
 		rm "$1"
-		echo "删除文件 $1 成功"
+		echo "Delete $1"
 	fi
 	return 0
 	else        
@@ -50,15 +46,15 @@ unpackzipfile(){
 		do
 		trypassds "$1" "$line"
 		if [ $? = 0 ];then
-			echo "解压 $name 大成功！"
+			echo "Unpack $name Success by Brute Force！"
 			if [ $delete = 1 ];then
 				rm "$1"
-				echo "删除文件 $1 成功"
+				echo "Delete $1"
 			fi
 			return 0
 		fi
 		done
-		echo "解压 $name 失败"
+		echo "Unpack $name Failed"
 		dir=`dirname "$1"`
 		if [ "$dst"  ]; then
 			dir="$dir"/"$dst"
@@ -76,7 +72,7 @@ unpackfile(){
 	extision="${name##*.}"
 	if [ "$extision" == "rar" ] || [ "$extision" == "zip" ] || [ "$extision" == "7z" ]|| [ "$extision" == "gz" ]|| [ "$extision" == "tar" ];then
 		echo "extsion $extision"
-		unpackzipfile "$1"
+		unpackonefile "$1"
 		return 1
 	else
 		dir=`dirname "$1"`
@@ -121,5 +117,5 @@ unpackall(){
 	fi
 }
 
-echo "开始解压"
+echo "Starting Unpack"
 unpackall "$1"
