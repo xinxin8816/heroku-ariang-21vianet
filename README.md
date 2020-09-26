@@ -7,11 +7,14 @@ Using Rclone with 21vianet mod and Aria2, even UNRAR online flexibly? Try this [
 
 ## Abuse Warning 滥用警告
 
-**Heroku are actively prevent this APP.**<br>
-**本应用正被官方封禁。**
+**Heroku are actively banning this APP now.**<br>
+**官方正积极封禁本应用。**
 
 **Your account will be SUSPENDED in highly possible.**<br>
-**部署极有可能被封号。**
+**现在部署极有可能封号。**
+
+**This APP is no longer updated.**<br>
+**本应用今后将不再更新。**
 
 ## Catalog 目录
 * [Abuse Warning 滥用警告](#abuse-warning-滥用警告)
