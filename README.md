@@ -5,6 +5,14 @@ Build AriaNG on Heroku, and upload to cloud drive when the file download complet
 Using Rclone with 21vianet mod and Aria2, even UNRAR online flexibly? Try this [Heroku Rclone 21vianet](https://github.com/xinxin8816/heroku-rclone-21vianet)<br>
 想更灵活的使用 Aria2、Rclone，甚至是 RAR 在线解压？试试这个 [Heroku Rclone 世纪互联版](https://github.com/xinxin8816/heroku-rclone-21vianet)
 
+## Abuse Warning 滥用警告
+
+**Heroku are actively prevent this APP.**<br>
+**本应用正被官方封禁。**
+
+**Your account will be SUSPENDED in highly possible.**<br>
+**部署极有可能被封号。**
+
 ## Catalog 目录
 * [Abuse Warning 滥用警告](#abuse-warning-滥用警告)
 * [Improvement 改进](#improvement-改进)
@@ -15,14 +23,6 @@ Using Rclone with 21vianet mod and Aria2, even UNRAR online flexibly? Try this [
 * [Connect Cloud Drive 连接网盘](#optional-connect-cloud-drive-连接网盘)
 * [FAQ 常见问题](#faq-常见问题)
 * [Thanks 致谢](#thanks-致谢)
-
-## Abuse Warning 滥用警告
-
-**This APP designed for best performance so uses a lot of resources.**<br>
-**应用旨在获得最佳性能。**
-
-**Please be careful with that your Heroku account may be suspend.**<br>
-**请注意可能会导致封号。**
 
 ## Improvement 改进
 
@@ -111,9 +111,11 @@ others entries...
 ## FAQ 常见问题
 
 ### Do I have to use Docker?
-Not really, if you deployed previously and the APP is still working well, please enjoy it just like before.
+~~Not really, if you deployed previously and the APP is still working well, please enjoy it just like before.~~
 
-If you want to deploy a new APP or rebuild the previously APP, I recommend using Docker to prevent account banned.
+~~If you want to deploy a new APP or rebuild the previously APP, I recommend using Docker to prevent account banned.~~
+
+Heroku are actively prevent this APP. I recommend using Docker deploy a new APP or rebuild the previously APP to prevent account banned.
 
 ### Why it automatically stop after 30 minutes, and files were lost?
 Heroku Free Dyno will idle when there is no incoming request within 30 minutes, and your files will be deleted, so use Rclone to breaking this or use Heroku Hobby Dyno.
